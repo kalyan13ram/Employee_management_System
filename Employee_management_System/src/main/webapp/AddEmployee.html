@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Add Employee</title>
+
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .form-container {
+      background: #ffffff;
+      width: 100%;
+      max-width: 700px;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2563eb;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 5px;
+    }
+
+    form div {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      transition: border 0.3s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 4px rgba(37, 99, 235, 0.4);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    small {
+      color: #6b7280;
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* Gender radio buttons */
+    input[type="radio"] {
+      margin-right: 6px;
+      accent-color: #2563eb;
+    }
+
+    /* Buttons */
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      transition: 0.3s;
+    }
+
+    button[type="reset"] {
+      background: #9ca3af;
+      margin-right: 10px;
+    }
+
+    button[type="reset"]:hover {
+      background: #6b7280;
+    }
+
+    button[type="submit"] {
+      background: #2563eb;
+    }
+
+    button[type="submit"]:hover {
+      background: #1e40af;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 20px;
+      }
+      button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h1>Add Employee</h1>
+
+    <form action="AddEmployee" method="post">
+      <!-- Employee ID -->
+      <div>
+        <label for="emp_id">Employee ID</label>
+        <input required type="number" id="emp_id" name="emp_id" min="1" placeholder="e.g. 101" />
+      </div>
+
+      <!-- Name -->
+      <div>
+        <label for="name">Full Name</label>
+        <input required type="text" id="name" name="name" placeholder="e.g. Rahul Sharma" />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="email">Email</label>
+        <input required type="email" id="email" name="email" placeholder="name@company.com" />
+      </div>
+
+      <!-- Department -->
+      <div>
+        <label for="department">Department</label>
+        <select id="department" name="department" required>
+          <option value="" disabled selected>Select department</option>
+          <option>IT</option>
+          <option>Development</option>
+          <option>Finance</option>
+          <option>HR</option>
+          <option>Marketing</option>
+          <option>Operations</option>
+          <option>Testing</option>
+          <option>Design</option>
+          <option>Sales</option>
+          <option>Support</option>
+        </select>
+      </div>
+
+      <!-- Designation -->
+      <div>
+        <label for="designation">Designation / Job Title</label>
+        <input type="text" id="designation" name="designation" placeholder="e.g. Software Engineer" />
+      </div>
+
+      <!-- Salary -->
+      <div>
+        <label for="salary">Salary (₹)</label>
+        <input required type="number" id="salary" name="salary" min="0" step="100" placeholder="55000" />
+      </div>
+
+      <!-- Experience -->
+      <div>
+        <label for="experience">Experience (Years)</label>
+        <input required type="number" id="experience" name="experience" min="0" max="50" step="1" placeholder="3" />
+      </div>
+
+      <!-- Joining Date -->
+      <div>
+        <label for="joining_date">Joining Date</label>
+        <input required type="date" id="joining_date" name="joining_date" />
+      </div>
+
+      <!-- Date of Birth -->
+      <div>
+        <label for="date_of_birth">Date of Birth</label>
+        <input required type="date" id="date_of_birth" name="date_of_birth" />
+      </div>
+
+      <!-- Gender -->
+      <div>
+        <label>Gender</label>
+        <label><input type="radio" name="gender" value="M" required> Male</label>
+        <label><input type="radio" name="gender" value="F"> Female</label>
+        <label><input type="radio" name="gender" value="O"> Other</label>
+      </div>
+
+      <!-- Mobile No -->
+      <div>
+        <label for="mobile_no">Mobile Number</label>
+        <input required id="mobile_no" name="mobile_no" type="tel" pattern="^\d{10}$" inputmode="numeric" placeholder="10-digit mobile number" />
+        <small>Enter 10 digits (no country code). Example: 9876543210</small>
+      </div>
+
+      <!-- Address -->
+      <div>
+        <label for="address">Address</label>
+        <textarea id="address" name="address" placeholder="City, State" required></textarea>
+      </div>
+
+      <!-- Actions -->
+      <div>
+        <button type="reset">Reset</button>
+        <button type="submit">Save Employee</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

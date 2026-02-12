@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View All Employees</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafc;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      background: #2563eb;
+      color: white;
+      padding: 15px;
+      margin: 0;
+    }
+
+    form {
+      margin-top: 40px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      color: white;
+      background-color: #2563eb;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <h1>View All Employees</h1>
+
+  <form action="ViewAll_Employee" method="post">
+    <p>Click below to fetch all employee records from the database.</p>
+    <button type="submit">Show Employee List</button>
+  </form>
+
+  <footer>
+    <p>Employee Management System © 2025</p>
+  </footer>
+</body>
+</html>

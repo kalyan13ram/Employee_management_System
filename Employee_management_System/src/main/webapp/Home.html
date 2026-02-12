@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Management System</title>
+  <style>
+    /* Reset some defaults */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .container {
+      background: #ffffff;
+      color: #333;
+      width: 90%;
+      max-width: 480px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h1 {
+      color: #2563eb;
+      font-size: 26px;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #2563eb;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    form {
+      margin: 15px 0;
+    }
+
+    input[type="submit"] {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 80%;
+      max-width: 250px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+    }
+
+    input[type="submit"]:hover {
+      background: #1e40af;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(30, 64, 175, 0.4);
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Employee Management System</h1>
+
+    <form action="AddEmployee.html" method="post">
+      <input type="submit" value="Insert Employee Data">
+    </form>
+
+    <form action="Update_Employee.html" method="post">
+      <input type="submit" value="Update Details">
+    </form>
+
+    <form action="ViewAll_Employee.html">
+      <input type="submit" value="View All Details">
+    </form>
+
+    <form action="Delete_Employee.html">
+      <input type="submit" value="Delete Details">
+    </form>
+
+    <footer>
+      © 2025 Employee Management System
+    </footer>
+  </div>
+</body>
+</html>
